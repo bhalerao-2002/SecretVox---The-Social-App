@@ -94,7 +94,7 @@ const NotificationPage = () => {
 					</div>
 				)}
 				{notifications?.length === 0 && <div className='text-center p-4 font-bold'>No notifications 🤔</div>}
-				{notifications?.map((notification) => (
+				{notifications?.reverse().map((notification) => (
 					<div className='border-b border-gray-700 flex justify-between' key={notification._id}>
 						<div className='flex gap-3 p-4'>
 							{notification.type === "follow" && <FaUser className='w-7 h-7 text-primary' />}

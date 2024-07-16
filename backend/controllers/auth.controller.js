@@ -24,7 +24,7 @@ const sendResetPasswordMail = async(fullName, email, token) => {
 		html: `
 		  <p>Hello ${fullName},</p>
 		  <p>Please use this link to reset your password:</p>
-		  <a href="http://localhost:5000/setpass?token=${token}">RESET PASSWORD</a>
+		  <a href="https://secretvox.onrender.com/setpass?token=${token}">RESET PASSWORD</a>
 		`
 	  };
   
