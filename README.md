@@ -8,8 +8,17 @@
 ## Agenda 
 
 Tech Stack: 
+- Front-End: React.js, Tailwind CSS.
+- Back-End: Node.js, Express.js.
+- Database: MongoDB(mongoose)
+</br>
 
-- React.js, MongoDB, Node.js, Express, Tailwind
+
+
+![Flow of Development](https://res.cloudinary.com/df9i867uq/image/upload/v1725429824/u8od0pfgxvnr5c4lkama.jpg)
+
+
+
 
 </br>
 
