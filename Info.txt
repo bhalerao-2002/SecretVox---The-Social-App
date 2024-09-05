@@ -1,0 +1,72 @@
+DB ER Diagram code:
+
+// Enum for notification types
+Enum notification_type {
+  follow
+  like
+}
+
+// User table
+Table User {
+  _id ObjectId [pk]
+  username String [unique, not null]
+  fullName String [not null]
+  password String [not null]
+  email String [unique, not null]
+  profileImg String
+  coverImg String
+  bio String
+  link String
+  postCount Int
+  token String
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+// Post table
+Table Post {
+  _id ObjectId [pk]
+  user ObjectId [ref: > User._id, not null]
+  text String
+  img String
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+// Notification table
+Table Notification {
+  _id ObjectId [pk]
+  from ObjectId [ref: > User._id, not null]
+  to ObjectId [ref: > User._id, not null]
+  type notification_type [not null]
+  read Boolean
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+// Relationships
+Table User_Followers {
+  user_id ObjectId [ref: > User._id]
+  follower_id ObjectId [ref: > User._id]
+}
+
+Table User_Following {
+  user_id ObjectId [ref: > User._id]
+  following_id ObjectId [ref: > User._id]
+}
+
+Table Post_Likes {
+  post_id ObjectId [ref: > Post._id]
+  user_id ObjectId [ref: > User._id]
+}
+
+Table Post_Comments {
+  post_id ObjectId [ref: > Post._id]
+  user_id ObjectId [ref: > User._id]
+  text String [not null]
+}
+
+Table User_LikedPosts {
+  user_id ObjectId [ref: > User._id]
+  post_id ObjectId [ref: > Post._id]
+}
